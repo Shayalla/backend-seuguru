@@ -1,7 +1,9 @@
 const express = require('express');
-const { newUser  } = require('../controllers/userController')
+const { newUser, getUser  } = require('../controllers/userController')
 
 const apiRouter = express.Router();
+
+apiRouter.get('/users/:id', getUser);
 
 apiRouter.post('/users', newUser);
 
