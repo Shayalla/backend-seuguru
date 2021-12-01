@@ -7,7 +7,7 @@ const newInsurance = rescue(async(req, res) => {
   return res.status(insurance.code).json(insurance.result);
 });
 
-const getInsurances = rescue(async(req, res) => {
+const getInsurances = rescue(async(_req, res) => {
   const insurances = await getAllInsurances();
   res.status(insurances.code).json(insurances.result);
 })
