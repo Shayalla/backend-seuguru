@@ -12,7 +12,7 @@ const getAllInsurances = async () => {
       { model: Coverage, as: 'coverages' },
     });
   return { result: insurances, code: 200 };
-}
+};
 
 module.exports = {
   createInsurance,
