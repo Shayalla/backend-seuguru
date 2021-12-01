@@ -1,7 +1,11 @@
 const express = require('express');
 const { newCoverage } = require('../controllers/coverageController');
-const { newInsurance, getInsurances } = require('../controllers/insuranceController');
 const { newUser, getUser  } = require('../controllers/userController')
+const {
+  newInsurance,
+  getInsurances,
+  simulatorInsurance
+} = require('../controllers/insuranceController');
 
 const apiRouter = express.Router();
 
@@ -14,5 +18,7 @@ apiRouter.post('/insurance', newInsurance);
 apiRouter.get('/insurance', getInsurances);
 
 apiRouter.post('/coverage', newCoverage);
+
+apiRouter.post('/simulator', simulatorInsurance);
 
 module.exports = { apiRouter };
