@@ -6,12 +6,12 @@ const { simulator } = require('../services/coverageService');
 const newInsurance = rescue(async (req, res) => {
   const { name } = req.body;
   const insurance = await createInsurance({ name });
-  return res.status(insurance.code).json(insurance.result);
+  return res.status(insurance.code).json({ message: insurance.result });
 });
 
 const getInsurances = rescue(async (_req, res) => {
   const insurances = await getAllInsurances();
-  res.status(insurances.code).json(insurances.result);
+  res.status(insurances.code).json({ message: insurances.result });
 });
 
 const simulatorInsurance = rescue(async (req, res) => {
@@ -19,7 +19,7 @@ const simulatorInsurance = rescue(async (req, res) => {
   const { coverage_id, capital } = coberturas[0];
   const simulatorUser = await simulator({ insurance_id, coverage_id, capital });
 
-  res.status(simulatorUser.code).json(simulatorUser.result);
+  res.status(simulatorUser.code).json({ message: simulatorUser.result });
 });
 
 module.exports = {
