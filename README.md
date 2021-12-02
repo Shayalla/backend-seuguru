@@ -14,7 +14,7 @@ O objetivo era fazer um simulador de seguros, segundo os requisitos deste reposi
 
 3.  Entre na pasta que você acabou de clonar
 
-  - `cd seuGuru`
+  - `cd backend-seuguru`
 
 4.  Instale as dependências
 
