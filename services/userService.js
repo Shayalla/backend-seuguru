@@ -8,7 +8,7 @@ const createUser = async ({ name, age, address, number, zipcode }) => {
 const getUserById = async (id) => {
   const user = await User.findByPk(id);
 
-  if (!user) return { result: 'Usuário não encontrado', code: 400 }
+  if (!user) return { result: { message: 'Usuário não encontrado' }, code: 400 };
 
   const { age } = user.dataValues;
   return { result: { id, age }, code: 200 };

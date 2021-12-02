@@ -1,6 +1,6 @@
 const express = require('express');
 const { newCoverage } = require('../controllers/coverageController');
-const { newUser, getUser  } = require('../controllers/userController')
+const { newUser, getUser  } = require('../controllers/userController');
 const {
   newInsurance,
   getInsurances,
