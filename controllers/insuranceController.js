@@ -1,5 +1,4 @@
 const rescue = require('express-rescue');
-const { getUserById } = require('../services/userService');
 const { createInsurance, getAllInsurances } = require('../services/insuranceService');
 const { simulator } = require('../services/coverageService');
 
@@ -11,7 +10,7 @@ const newInsurance = rescue(async (req, res) => {
 
 const getInsurances = rescue(async (_req, res) => {
   const insurances = await getAllInsurances();
-  res.status(insurances.code).json({ message: insurances.result });
+  res.status(insurances.code).json(insurances.result);
 });
 
 const simulatorInsurance = rescue(async (req, res) => {
@@ -19,7 +18,7 @@ const simulatorInsurance = rescue(async (req, res) => {
   const { coverage_id, capital } = coberturas[0];
   const simulatorUser = await simulator({ insurance_id, coverage_id, capital });
 
-  res.status(simulatorUser.code).json({ message: simulatorUser.result });
+  res.status(simulatorUser.code).json(simulatorUser.result);
 });
 
 module.exports = {

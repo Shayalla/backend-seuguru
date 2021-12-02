@@ -10,7 +10,7 @@ const newUser = rescue(async(req, res) => {
 const getUser = rescue(async(req, res) => {
   const { id } = req.params;
   const user = await getUserById(id);
-  return res.status(user.code).json({ message: user.result });
+  return res.status(user.code).json(user.result);
 });
 
 module.exports = {

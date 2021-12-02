@@ -17,7 +17,6 @@ const simulator = async ({ insurance_id, coverage_id, capital }) => {
 
   const { result } = coverage;
   const { name, factor } = result;
-  console.log(result);
   const premio = capital * factor;
 
   const resultSimulator = {
